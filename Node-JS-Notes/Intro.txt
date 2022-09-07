@@ -1,0 +1,25 @@
+HTTP METHODS
+	GET -> for getting the data
+	POST -> for creating the data
+	PUT -> for updating the data
+	DELETE -> for delete the data
+
+HTTP REQUESTS
+	400 -> Bad Request
+	200 -> Good Request
+	201 -> Good and Created
+	400 -> Bad Request
+	401 -> UnAuthorized
+	404 -> Not Found
+	403 -> Forbidden
+	409 -> Conflict (Resource already present)
+	422 -> Unprocessable Entity
+	500 -> Internal Server Error
+
+
+____________________________________________________________
+
+NOTE:
+	PUT is a method of modifying resource where the client sends data that updates the entire resource. 
+	PATCH is a method of modifying resources where 
+	the client sends partial data that is to be updated without modifying the entire data.
