@@ -1,0 +1,31 @@
+1) CORS stands for Cross Origin Resource Sharing
+2) A mechanism that allows a server to specify which origin it allows to have access to is pages.
+
+3) Imagine you have two sites i.e Site A and B
+
+	A Full Stack App
+	
+	Site A => Front-End
+	Site B => Back-End
+
+	Site B (Server) will receive the request from Site A (Client)
+	Site B should not by default be allowed to receive requests and return to responses to any website.
+	The reason is that it becomes insecure. We don't want malicious website to be able to fetch data from our server.
+	
+	Because the server contain sensitive information i.e Sessions, Cookies, auth data, Login Credentials etc
+
+	So for that reason our server should specify who can fetch data from our server or Database.
+
+	Origin = port, server, or hosting service
+
+	In headers we specify which domain it allows to get request.
+	
+	We need to add Header which Access-Control-Allow-Origin Header and set the value of frontend domain
+	the value of it.
+
+	 	
+
+
+
+
+
