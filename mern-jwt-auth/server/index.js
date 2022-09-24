@@ -1,19 +1,41 @@
-const express = require("express")
-const cors = require("cors")
+const express = require("express");
+const cors = require("cors");
+const mongoose = require("mongoose");
 
-const app = express()
+const app = express();
 
-PORT = 4000
+const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
-    console.log(`Server Started on PORT ${PORT}`)
-})
+  console.log(`Server Started on PORT ${PORT}`);
+});
 
-app.use(cors({
+mongoose
+  .connect(
+    "mongodb+srv://mern-auth:" +
+      process.env.MONGO_ATLAS_PW +
+      "@cluster0.0cbziim.mongodb.net/?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(() => {
+    console.log("DB Connection Successfull");
+  })
+  .catch((err) => {
+    console.log(err.message);
+  });
+
+mongoose.Promise = global.Promise;
+
+app.use(
+  cors({
     // Change the URL according to your Front-End website where it is hosted
-    origin:["http://localhost:3000"],
+    origin: ["http://localhost:3000"],
     methods: ["GET", "POST"],
     credentials: true,
-}))
+  })
+);
 
-// This would have access to JSON data in the API request 
-app.use(express.json())
+// This would have access to JSON data in the API request
+app.use(express.json());

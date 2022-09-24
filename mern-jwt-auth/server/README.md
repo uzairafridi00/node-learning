@@ -1,6 +1,6 @@
 # Packages to Install
 
 ```
-npm i express nodemon cors cookie-parser jsonwebtoken bcrypt mongoose
+npm i express nodemon cors cookie-parser jsonwebtoken bcrypt mongoose dotenv
 
 ```
