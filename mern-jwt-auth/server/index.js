@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+require('dotenv').config()
 
 const app = express();
 
@@ -11,9 +12,7 @@ app.listen(PORT, () => {
 
 mongoose
   .connect(
-    "mongodb+srv://mern-auth:" +
-      process.env.MONGO_ATLAS_PW +
-      "@cluster0.0cbziim.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://auther:" + process.env.MONGO_PW + "@auther.oqtyoub.mongodb.net/?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
