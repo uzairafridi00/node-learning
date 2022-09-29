@@ -1,9 +1,15 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
-require('dotenv').config()
-
+require("dotenv").config();
+const authRoutes = require("./api/Routes/AuthRoutes");
 const app = express();
+
+const cookieParser = require("cookie-parser")
+
+
+
+
 
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
@@ -12,7 +18,9 @@ app.listen(PORT, () => {
 
 mongoose
   .connect(
-    "mongodb+srv://auther:" + process.env.MONGO_PW + "@auther.oqtyoub.mongodb.net/?retryWrites=true&w=majority",
+    "mongodb+srv://auther:" +
+      process.env.MONGO_PW +
+      "@auther.oqtyoub.mongodb.net/?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -36,5 +44,7 @@ app.use(
   })
 );
 
+app.use(cookieParser)
 // This would have access to JSON data in the API request
 app.use(express.json());
+app.use("/", authRoutes);
