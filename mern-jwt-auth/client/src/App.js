@@ -1,25 +1,19 @@
 import React from "react";
-import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
+import Register from "./pages/Register";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import Login from "./pages/Login";
+import Cards from "./pages/Cards";
+import "react-toastify/dist/ReactToastify.css";
 
-import Login from "./pages/Login"
-import Secret from "./pages/Secret"
-import Register from "./pages/Register"
-
-
-
-function App() {
+export default function App() {
   return (
-    <>
-    <Router>
+    <BrowserRouter>
       <Routes>
-        <Route exact path="/register" element={<Register />}></Route>
-        <Route exact path="/Login" element={<Login />}></Route>
-        <Route exact path="/" element={<Secret />}></Route>
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/login" element={<Login />} />
+        <Route exact path="/" element={<Cards />} />
         <Route exact path="*" element={<h1>Not Found Any Page</h1>}></Route>
       </Routes>
-    </Router>
-    </>
+    </BrowserRouter>
   );
 }
-
-export default App;
